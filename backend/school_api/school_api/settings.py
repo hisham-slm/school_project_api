@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'student',
     'teacher',
     'rest_framework',
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
 ]
 
 ROOT_URLCONF = 'school_api.urls'
@@ -79,9 +82,14 @@ WSGI_APPLICATION = 'school_api.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
+    # reminder go install Pillow and  psycopg2
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',#changed to postgresql_psycopg2 from sqlite3
+        'NAME': 'school_api', #database name
+        'USER':'postgres',
+        'PASSWORD':'blahcoat',
+        'HOST':'localhost',
+        'PORT':'5432'
     }
 }
 

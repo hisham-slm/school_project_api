@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <style>
         .login_card{
             padding: 100px;
@@ -43,11 +44,20 @@
         <h2>Admin Login</h2>
         <div class="form">
             <form action="">
-                <input type="text" placeholder="Enter Your User ID"><br>
-                <input type="password" placeholder="Enter Password"><br>
+                <input type="text" placeholder="Enter Your User ID" id="email"><br>
+                <input type="password" placeholder="Enter Password" id="password"><br>
                 <button type="submit">Submit</button>
             </form>
         </div>
     </div>
+
+    <script>
+        $(document).ready(function(){
+            email = $('#email').val()
+            password = $('#password').val()
+        })
+    </script>
+
+
 </body>
 </html>
